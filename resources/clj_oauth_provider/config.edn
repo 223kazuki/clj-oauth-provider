@@ -1,0 +1,16 @@
+{:duct.core/project-ns  clj-oauth-provider
+ :duct.core/environment :production
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+
+ :duct.router/cascading
+ [#ig/ref :clj-oauth-provider.handler/example
+  #ig/ref :clj-oauth-provider.handler/api]
+
+ :clj-oauth-provider.handler/example
+ {}
+ :clj-oauth-provider.handler/api
+ {:auth #ig/ref :clj-oauth-provider.service/authorization}
+ :clj-oauth-provider.service/authorization
+ {}}
